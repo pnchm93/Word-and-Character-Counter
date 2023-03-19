@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word and Charecter Counter</title>
+    <style>
+         #newid{ 
+            text-align: center;
+            align-items: center;
+            margin: auto;
+        }
+        body{
+            background-color: cadetblue;
+            background-size: cover;
+        }
+        h1{
+           background-color: bisque;
+           text-align: center;
+           width: 505px;
+           margin: auto;
+        }
+        #textbox{
+            width: 500px;
+            height: 200px;
+            font-size: 18px;
+            border-color: bisque;
+        }
+        #p{
+           text-align: center;
+           background-color: bisque;
+           font-weight: bolder;
+           font-size: larger;
+           width: 300px;
+           margin: auto;
+           /* margin center and align auto will make 
+           the web suitable for web pages */
+        } 
+        
+    </style>
+</head>
+<body>
+    <div id="newid">
+        <h1 >Word and Character Counter</h1>
+        <textarea id="textbox" placeholder="Enter the text..."></textarea>
+        <p id="p">
+            <span  id="word"> 0 </span> Words and 
+            <span  id="char"> 0 </span> Characters
+        </p>
+    </div>
+    <script>
+        var id=document.getElementById("textbox");
+        id.addEventListener('input',function(){
+            var str=this.value;
+            var count=0;
+            var arr=str.split(' ');
+            for(i=0;i<arr.length;i++){
+                if(arr[i].length!=0){
+                    count++;
+                }
+            }
+            document.getElementById("word").innerHTML=count;
+            document.getElementById("char").innerHTML=str.length;
+        })
+    </script>
+</body>
+</html>
